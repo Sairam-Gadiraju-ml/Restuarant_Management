@@ -18,6 +18,7 @@ func main() {
 
 	// Intialize the tables for the day
 	views.IntializeTables()
+	go views.QueueProcessor()
 
 	// End points Responsbile for booking tables
 	var tableserice = views.TableServiceImplementation{}
@@ -38,14 +39,16 @@ func main() {
 	customer.HandleFunc("/add", views.AddCustomer).Methods("POST")
 
 	// End points Responsible for Orders
+	orderservice := views.OrderServiceImplementation{}
 	orders := router.PathPrefix("/orders").Subrouter()
-	orders.HandleFunc("/", views.GetOrders).Methods("GET", "POST")
-	orders.HandleFunc("/{id}", views.HandleOrderID).Methods("GET", "PUT", "DELETE")
+	orders.HandleFunc("/", orderservice.ListCreateOrder).Methods("GET", "POST")
+	orders.HandleFunc("/{id}", orderservice.HandleOrderID).Methods("GET", "PUT", "DELETE")
 
 	//Endpoins Responsible for Menu
+	menuservice := views.MenuServiceImplementation{}
 	menu := router.PathPrefix("/menu").Subrouter()
-	menu.HandleFunc("/", views.GetMenu).Methods("GET", "POST")
-	menu.HandleFunc("/{id}", views.HandleMenuItem).Methods("GET", "PUT", "DELETE")
+	menu.HandleFunc("/", menuservice.GetMenu).Methods("GET", "POST")
+	menu.HandleFunc("/{id}", menuservice.HandleMenuItem).Methods("GET", "PUT", "DELETE")
 
 	// Endpoints for Login and Register
 	userservice := views.UserServiceImplementation{}
