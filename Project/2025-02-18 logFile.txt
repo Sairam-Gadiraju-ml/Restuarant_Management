@@ -1,0 +1,275 @@
+2025/02/18 14:09:52 Initializing Tables
+2025/02/18 14:09:52 Intializing the server at http://localhost:5000/:
+2025/02/18 14:10:16 Fetching tables data...
+2025/02/18 14:10:16 Successfully fetched tables data.
+2025/02/18 14:10:20 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:10:20 Checking time slot 9 for 9
+%!(EXTRA models.WeekDay=Monday)
+2025/02/18 14:10:20 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:11:12 Initializing Tables
+2025/02/18 14:11:12 Intializing the server at http://localhost:5000/:
+2025/02/18 14:11:21 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:11:21 Checking time slot 9 for 9 Monday
+2025/02/18 14:11:21 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:12:27 Initializing Tables
+2025/02/18 14:12:27 Intializing the server at http://localhost:5000/:
+2025/02/18 14:13:00 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:13:00 Checking time slot 9 for 9 at Monday and slot is true
+2025/02/18 14:13:00 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:14:14 Initializing Tables
+2025/02/18 14:14:14 Intializing the server at http://localhost:5000/:
+2025/02/18 14:14:21 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:14:21 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:14:28 Fetching tables data...
+2025/02/18 14:14:28 Successfully fetched tables data.
+2025/02/18 14:15:23 Initializing Tables
+2025/02/18 14:15:23 Intializing the server at http://localhost:5000/:
+2025/02/18 14:15:44 Fetching tables data...
+2025/02/18 14:15:44 Successfully fetched tables data.
+2025/02/18 14:15:48 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:15:48 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:16:37 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:16:37 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:17:11 Initializing Tables
+2025/02/18 14:17:11 Intializing the server at http://localhost:5000/:
+2025/02/18 14:17:31 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:17:31 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:18:32 Initializing Tables
+2025/02/18 14:18:32 Intializing the server at http://localhost:5000/:
+2025/02/18 14:18:36 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:18:36 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:19:22 Initializing Tables
+2025/02/18 14:19:22 Intializing the server at http://localhost:5000/:
+2025/02/18 14:19:29 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 14:19:29 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 14:19:35 Fetching tables data...
+2025/02/18 14:19:35 Successfully fetched tables data.
+2025/02/18 18:38:47 Initializing Tables
+2025/02/18 18:38:47 Intializing the server at http://localhost:5000/:
+2025/02/18 18:38:48 Fetching tables data...
+2025/02/18 18:38:48 Successfully fetched tables data.
+2025/02/18 18:39:01 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 18:39:01 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 18:39:03 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 18:39:03 Booked Table 2 on Monday at 9'O clock for Ram Sai
+2025/02/18 18:39:09 Fetching tables data...
+2025/02/18 18:39:09 Successfully fetched tables data.
+2025/02/18 19:01:29 Initializing Tables
+2025/02/18 19:01:29 Intializing the server at http://localhost:5000/:
+2025/02/18 19:01:34 Fetching tables data...
+2025/02/18 19:01:34 Successfully fetched tables data.
+2025/02/18 19:01:46 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:01:46 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:02:00 Fetching tables data...
+2025/02/18 19:02:00 Successfully fetched tables data.
+2025/02/18 19:08:45 Initializing Tables
+2025/02/18 19:08:45 Intializing the server at http://localhost:5000/:
+2025/02/18 19:08:46 Error Decoding
+2025/02/18 19:08:46 http: panic serving [::1]:59655: Error Decoding
+
+goroutine 7 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1947 +0xbe
+panic({0xa338e0?, 0xc00008a060?})
+	C:/Program Files/Go/src/runtime/panic.go:787 +0x132
+log.Panicln({0xc0000a99a8?, 0xa29100?, 0xc0000c2000?})
+	C:/Program Files/Go/src/log/log.go:446 +0x5a
+Project/views.(*TableServiceImplementation).BookTable(0xb189b8?, {0xb18640, 0xc0000be000}, 0xc000096280)
+	C:/Users/Sairam.Gadiraju/Restuarant_Management/Project/views/table_views.go:157 +0x11c
+net/http.HandlerFunc.ServeHTTP(0xc000096140?, {0xb18640?, 0xc0000be000?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2294 +0x29
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a8000, {0xb18640, 0xc0000be000}, 0xc000096000)
+	C:/Users/Sairam.Gadiraju/go/pkg/mod/github.com/gorilla/mux@v1.8.1/mux.go:212 +0x1e2
+net/http.serverHandler.ServeHTTP({0xb172b0?}, {0xb18640?, 0xc0000be000?}, 0x6?)
+	C:/Program Files/Go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc000124090, {0xb189b8, 0xc0001ee720})
+	C:/Program Files/Go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	C:/Program Files/Go/src/net/http/server.go:3454 +0x485
+2025/02/18 19:08:49 Error Decoding
+2025/02/18 19:08:49 http: panic serving [::1]:59661: Error Decoding
+
+goroutine 36 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1947 +0xbe
+panic({0xa338e0?, 0xc00008a0e0?})
+	C:/Program Files/Go/src/runtime/panic.go:787 +0x132
+log.Panicln({0xc0000a99a8?, 0xa29100?, 0xc0000c25a0?})
+	C:/Program Files/Go/src/log/log.go:446 +0x5a
+Project/views.(*TableServiceImplementation).BookTable(0xb189b8?, {0xb18640, 0xc0000be0e0}, 0xc000096c80)
+	C:/Users/Sairam.Gadiraju/Restuarant_Management/Project/views/table_views.go:157 +0x11c
+net/http.HandlerFunc.ServeHTTP(0xc000096b40?, {0xb18640?, 0xc0000be0e0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2294 +0x29
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a8000, {0xb18640, 0xc0000be0e0}, 0xc000096a00)
+	C:/Users/Sairam.Gadiraju/go/pkg/mod/github.com/gorilla/mux@v1.8.1/mux.go:212 +0x1e2
+net/http.serverHandler.ServeHTTP({0xb172b0?}, {0xb18640?, 0xc0000be0e0?}, 0x6?)
+	C:/Program Files/Go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc00009a1b0, {0xb189b8, 0xc0001ee720})
+	C:/Program Files/Go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	C:/Program Files/Go/src/net/http/server.go:3454 +0x485
+2025/02/18 19:08:52 Error Decoding
+2025/02/18 19:08:52 http: panic serving [::1]:59663: Error Decoding
+
+goroutine 20 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1947 +0xbe
+panic({0xa338e0?, 0xc00008a150?})
+	C:/Program Files/Go/src/runtime/panic.go:787 +0x132
+log.Panicln({0xc0000a59a8?, 0xa29100?, 0xc0000c2640?})
+	C:/Program Files/Go/src/log/log.go:446 +0x5a
+Project/views.(*TableServiceImplementation).BookTable(0xb189b8?, {0xb18640, 0xc0000be1c0}, 0xc000097180)
+	C:/Users/Sairam.Gadiraju/Restuarant_Management/Project/views/table_views.go:157 +0x11c
+net/http.HandlerFunc.ServeHTTP(0xc000097040?, {0xb18640?, 0xc0000be1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2294 +0x29
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a8000, {0xb18640, 0xc0000be1c0}, 0xc0001e6dc0)
+	C:/Users/Sairam.Gadiraju/go/pkg/mod/github.com/gorilla/mux@v1.8.1/mux.go:212 +0x1e2
+net/http.serverHandler.ServeHTTP({0xb172b0?}, {0xb18640?, 0xc0000be1c0?}, 0x6?)
+	C:/Program Files/Go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001a06c0, {0xb189b8, 0xc0001ee720})
+	C:/Program Files/Go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	C:/Program Files/Go/src/net/http/server.go:3454 +0x485
+2025/02/18 19:08:59 Error Decoding
+2025/02/18 19:08:59 http: panic serving [::1]:59669: Error Decoding
+
+goroutine 21 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1947 +0xbe
+panic({0xa338e0?, 0xc0001a6e20?})
+	C:/Program Files/Go/src/runtime/panic.go:787 +0x132
+log.Panicln({0xc0000a99a8?, 0xa29100?, 0xc0001e3d60?})
+	C:/Program Files/Go/src/log/log.go:446 +0x5a
+Project/views.(*TableServiceImplementation).BookTable(0xb189b8?, {0xb18640, 0xc0001cc1c0}, 0xc0001e7040)
+	C:/Users/Sairam.Gadiraju/Restuarant_Management/Project/views/table_views.go:157 +0x11c
+net/http.HandlerFunc.ServeHTTP(0xc0001e6f00?, {0xb18640?, 0xc0001cc1c0?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2294 +0x29
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a8000, {0xb18640, 0xc0001cc1c0}, 0xc000097540)
+	C:/Users/Sairam.Gadiraju/go/pkg/mod/github.com/gorilla/mux@v1.8.1/mux.go:212 +0x1e2
+net/http.serverHandler.ServeHTTP({0xb172b0?}, {0xb18640?, 0xc0001cc1c0?}, 0x6?)
+	C:/Program Files/Go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001a0750, {0xb189b8, 0xc0001ee720})
+	C:/Program Files/Go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	C:/Program Files/Go/src/net/http/server.go:3454 +0x485
+2025/02/18 19:09:02 Fetching tables data...
+2025/02/18 19:09:02 Successfully fetched tables data.
+2025/02/18 19:09:06 Error Decoding
+2025/02/18 19:09:06 http: panic serving [::1]:59675: Error Decoding
+
+goroutine 9 [running]:
+net/http.(*conn).serve.func1()
+	C:/Program Files/Go/src/net/http/server.go:1947 +0xbe
+panic({0xa338e0?, 0xc0001a6fa0?})
+	C:/Program Files/Go/src/runtime/panic.go:787 +0x132
+log.Panicln({0xc00002b9a8?, 0xa29100?, 0xc0002260a0?})
+	C:/Program Files/Go/src/log/log.go:446 +0x5a
+Project/views.(*TableServiceImplementation).BookTable(0xb189b8?, {0xb18640, 0xc0001cc380}, 0xc0001e7a40)
+	C:/Users/Sairam.Gadiraju/Restuarant_Management/Project/views/table_views.go:157 +0x11c
+net/http.HandlerFunc.ServeHTTP(0xc0001e7900?, {0xb18640?, 0xc0001cc380?}, 0x0?)
+	C:/Program Files/Go/src/net/http/server.go:2294 +0x29
+github.com/gorilla/mux.(*Router).ServeHTTP(0xc0001a8000, {0xb18640, 0xc0001cc380}, 0xc0001e77c0)
+	C:/Users/Sairam.Gadiraju/go/pkg/mod/github.com/gorilla/mux@v1.8.1/mux.go:212 +0x1e2
+net/http.serverHandler.ServeHTTP({0xb172b0?}, {0xb18640?, 0xc0001cc380?}, 0x6?)
+	C:/Program Files/Go/src/net/http/server.go:3301 +0x8e
+net/http.(*conn).serve(0xc0001241b0, {0xb189b8, 0xc0001ee720})
+	C:/Program Files/Go/src/net/http/server.go:2102 +0x625
+created by net/http.(*Server).Serve in goroutine 1
+	C:/Program Files/Go/src/net/http/server.go:3454 +0x485
+2025/02/18 19:09:20 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:09:25 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:11:21 Initializing Tables
+2025/02/18 19:11:21 Intializing the server at http://localhost:5000/:
+2025/02/18 19:11:25 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:25 [{9 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {10 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {11 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {12 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {13 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {14 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {15 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {16 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {17 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {18 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {19 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {20 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {21 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]} {22 [{1 4 true} {2 4 true} {3 4 true} {4 4 true} {5 4 true} {6 4 true} {7 4 true} {8 4 true} {9 4 true} {10 4 true}]}]
+2025/02/18 19:11:31 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:12:17 Initializing Tables
+2025/02/18 19:12:17 Intializing the server at http://localhost:5000/:
+2025/02/18 19:16:02 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:16:07 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:16:26 Initializing Tables
+2025/02/18 19:16:26 Intializing the server at http://localhost:5000/:
+2025/02/18 19:16:33 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:16:36 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:16:53 Initializing Tables
+2025/02/18 19:16:53 Intializing the server at http://localhost:5000/:
+2025/02/18 19:16:58 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:17:03 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:19:10 Initializing Tables
+2025/02/18 19:19:10 Intializing the server at http://localhost:5000/:
+2025/02/18 19:19:17 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:19:20 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:22:17 Initializing Tables
+2025/02/18 19:22:17 Intializing the server at http://localhost:5000/:
+2025/02/18 19:22:22 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:22:27 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:22:50 Initializing Tables
+2025/02/18 19:22:50 Intializing the server at http://localhost:5000/:
+2025/02/18 19:23:10 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:23:19 Fetching tables data...
+2025/02/18 19:23:19 Successfully fetched tables data.
+2025/02/18 19:23:38 Initializing Tables
+2025/02/18 19:23:38 Intializing the server at http://localhost:5000/:
+2025/02/18 19:23:45 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:23:48 Booking table for customer Ram Sai at Monday '9
+2025/02/18 19:23:51 Fetching tables data...
+2025/02/18 19:23:51 Successfully fetched tables data.
+2025/02/18 19:24:42 Initializing Tables
+2025/02/18 19:24:42 Intializing the server at http://localhost:5000/:
+2025/02/18 19:24:47 Fetching tables data...
+2025/02/18 19:24:47 Successfully fetched tables data.
+2025/02/18 19:24:52 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:24:59 Fetching tables data...
+2025/02/18 19:24:59 Successfully fetched tables data.
+2025/02/18 19:28:29 Initializing Tables
+2025/02/18 19:28:29 Intializing the server at http://localhost:5000/:
+2025/02/18 19:29:01 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:29:01 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:29:07 Fetching tables data...
+2025/02/18 19:29:07 Successfully fetched tables data.
+2025/02/18 19:30:18 Initializing Tables
+2025/02/18 19:30:18 Intializing the server at http://localhost:5000/:
+2025/02/18 19:30:23 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:30:23 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:30:27 Fetching tables data...
+2025/02/18 19:30:27 Successfully fetched tables data.
+2025/02/18 19:31:14 Fetching tables data...
+2025/02/18 19:31:14 Successfully fetched tables data.
+2025/02/18 19:32:01 Initializing Tables
+2025/02/18 19:32:01 Intializing the server at http://localhost:5000/:
+2025/02/18 19:32:10 Fetching tables data...
+2025/02/18 19:32:10 Successfully fetched tables data.
+2025/02/18 19:32:17 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:32:17 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:32:21 Fetching tables data...
+2025/02/18 19:32:21 Successfully fetched tables data.
+2025/02/18 19:36:50 Initializing Tables
+2025/02/18 19:36:50 Intializing the server at http://localhost:5000/:
+2025/02/18 19:36:57 Fetching tables data...
+2025/02/18 19:36:57 Successfully fetched tables data.
+2025/02/18 19:37:01 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:37:01 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:37:03 Fetching tables data...
+2025/02/18 19:37:03 Successfully fetched tables data.
+2025/02/18 19:38:47 Initializing Tables
+2025/02/18 19:38:47 Intializing the server at http://localhost:5000/:
+2025/02/18 19:38:53 Fetching tables data...
+2025/02/18 19:38:53 Successfully fetched tables data.
+2025/02/18 19:38:56 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:38:56 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:39:00 Fetching tables data...
+2025/02/18 19:39:00 Successfully fetched tables data.
+2025/02/18 19:42:20 Initializing Tables
+2025/02/18 19:42:20 Intializing the server at http://localhost:5000/:
+2025/02/18 19:42:29 Fetching tables data...
+2025/02/18 19:42:29 Successfully fetched tables data.
+2025/02/18 19:42:33 Booking Table for Ram Sai at 9'O clock with BookNow: true
+2025/02/18 19:42:33 Booked Table 1 on Monday at 9'O clock for Ram Sai
+2025/02/18 19:42:36 Fetching tables data...
+2025/02/18 19:42:36 Successfully fetched tables data.

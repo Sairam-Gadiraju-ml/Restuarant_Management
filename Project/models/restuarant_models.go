@@ -26,9 +26,10 @@ type Order struct {
 
 // Bill represents the bill generated for an order.
 type Bill struct {
-	Id      uint    `json:"id"`
-	OrderId uint    `json:"order_id"`
-	Amount  float64 `json:"amount"`
+	Id       uint     `json:"id"`
+	OrderId  uint     `json:"order_id"`
+	Amount   float64  `json:"amount"`
+	Customer Customer `json:"customer"`
 }
 
 // HourDetails represents the details of each hour for table availability.
@@ -92,6 +93,31 @@ const (
 	Saturday
 	Sunday
 )
+
+// WeekDayToString map to convert WeekDay to its string representation
+var WeekDayToString = map[WeekDay]string{
+	Monday:    "Monday",
+	Tuesday:   "Tuesday",
+	Wednesday: "Wednesday",
+	Thursday:  "Thursday",
+	Friday:    "Friday",
+	Saturday:  "Saturday",
+	Sunday:    "Sunday",
+}
+var StringToWeekDay = map[string]WeekDay{
+	"Monday":    Monday,
+	"Tuesday":   Tuesday,
+	"Wednesday": Wednesday,
+	"Thursday":  Thursday,
+	"Friday":    Friday,
+	"Saturday":  Saturday,
+	"Sunday":    Sunday,
+}
+
+type WeekdayTime struct {
+	WeekDay WeekDay
+	Time    int
+}
 
 // String converts WeekDay to its string representation.
 func (d WeekDay) String() string {
