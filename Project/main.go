@@ -28,7 +28,7 @@ func main() {
 	table.HandleFunc("/cancel", tableserice.CancelTable).Methods("PATCH")
 	table.HandleFunc("/info", tableserice.GetInfo).Methods("GET")
 	table.HandleFunc("/free/{weekday}", tableserice.GetFreeTables).Methods("GET")
-	table.HandleFunc("/add", tableserice.AddTable).Methods("GET")
+	table.HandleFunc("/add", tableserice.AddTable).Methods("POST")
 	table.HandleFunc("/remove", tableserice.RemoveTable).Methods("DELETE")
 
 	// End points Responsible for Customer handling

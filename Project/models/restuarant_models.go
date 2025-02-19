@@ -5,7 +5,7 @@ type Customer struct {
 	Id        uint   `json:"id"`
 	FirstName string `json:"first_name"`
 	LastName  string `json:"last_name"`
-	Contact   int    `json:"contact"`
+	Contact   string `json:"contact"`
 	Type      string `json:"type"`
 }
 

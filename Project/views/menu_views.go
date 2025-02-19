@@ -28,7 +28,7 @@ func (s *MenuServiceImplementation) GetMenu(w http.ResponseWriter, r *http.Reque
 		err := json.NewDecoder(r.Body).Decode(&MenuItem)
 		if err != nil {
 			log.Println("Error Decoding the Request Body")
-			fmt.Fprintf(w, "Error Decoding the Request Body", r)
+			fmt.Fprintln(w, "Error Decoding the Request Body", r)
 			return
 		}
 		for _, val := range MenuItems {

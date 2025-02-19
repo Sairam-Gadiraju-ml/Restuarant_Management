@@ -32,7 +32,7 @@ func GetAllCustomer(w http.ResponseWriter, r *http.Request) {
 
 // HandleCustomer manages individual customer actions (GET, PUT, DELETE)
 func HandleCustomer(w http.ResponseWriter, r *http.Request) {
-	param := r.URL.Path[len("/customers/"):]
+	param := r.URL.Path[len("/customer/"):]
 	Id, err := strconv.Atoi(param)
 	if err != nil {
 		log.Println("Error parsing customer ID")
