@@ -10,14 +10,13 @@ import (
 	"testing"
 )
 
-var Users []models.User
+// Mock data
+var Users = []models.User{
+	{Id: 1, Username: "sai_ram", Role: "admin"},
+	{Id: 2, Username: "ram_varma", Role: "user"},
+}
 
 func TestDeleteUser(t *testing.T) {
-	// Mock data
-	Users = []models.User{
-		{Id: 1, Username: "sai_ram", Role: "admin"},
-		{Id: 2, Username: "ram_varma", Role: "user"},
-	}
 
 	t.Run("DELETE existing user by username", func(t *testing.T) {
 		userToDelete := models.User{Username: "sai_ram"}

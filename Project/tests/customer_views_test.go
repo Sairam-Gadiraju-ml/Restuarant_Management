@@ -10,14 +10,13 @@ import (
 	"testing"
 )
 
-var Customers []models.Customer
+// Mock data
+var Customers = []models.Customer{
+	{Id: 1, FirstName: "Sai", LastName: "Ram", Contact: "1234567890", Type: "Regular"},
+	{Id: 2, FirstName: "Ram", LastName: "Varma", Contact: "0987654321", Type: "VIP"},
+}
 
 func TestHandleCustomer(t *testing.T) {
-	// Mock data
-	Customers = []models.Customer{
-		{Id: 1, FirstName: "Sai", LastName: "Ram", Contact: "1234567890", Type: "Regular"},
-		{Id: 2, FirstName: "Ram", LastName: "Varma", Contact: "0987654321", Type: "VIP"},
-	}
 
 	t.Run("GET existing customer", func(t *testing.T) {
 		req, err := http.NewRequest(http.MethodGet, "/customer/1", nil)
