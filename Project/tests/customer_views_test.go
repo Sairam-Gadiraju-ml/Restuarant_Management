@@ -1,13 +1,16 @@
-package views
+package tests
 
 import (
 	"Project/models"
+	"Project/views"
 	"bytes"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 )
+
+var Customers []models.Customer
 
 func TestHandleCustomer(t *testing.T) {
 	// Mock data
@@ -22,7 +25,7 @@ func TestHandleCustomer(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(HandleCustomer)
+		handler := http.HandlerFunc(views.HandleCustomer)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
@@ -41,7 +44,7 @@ func TestHandleCustomer(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(HandleCustomer)
+		handler := http.HandlerFunc(views.HandleCustomer)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusNotFound {
@@ -57,7 +60,7 @@ func TestHandleCustomer(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(HandleCustomer)
+		handler := http.HandlerFunc(views.HandleCustomer)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
@@ -76,7 +79,7 @@ func TestHandleCustomer(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(HandleCustomer)
+		handler := http.HandlerFunc(views.HandleCustomer)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
@@ -97,7 +100,7 @@ func TestHandleCustomer(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc(AddCustomer)
+		handler := http.HandlerFunc(views.AddCustomer)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusCreated {

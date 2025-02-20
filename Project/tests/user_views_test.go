@@ -1,13 +1,16 @@
-package views
+package tests
 
 import (
 	"Project/models"
+	"Project/views"
 	"bytes"
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"testing"
 )
+
+var Users []models.User
 
 func TestDeleteUser(t *testing.T) {
 	// Mock data
@@ -24,7 +27,7 @@ func TestDeleteUser(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc((&UserServiceImplementation{}).DeleteUser)
+		handler := http.HandlerFunc((&views.UserServiceImplementation{}).DeleteUser)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
@@ -45,7 +48,7 @@ func TestDeleteUser(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc((&UserServiceImplementation{}).DeleteUser)
+		handler := http.HandlerFunc((&views.UserServiceImplementation{}).DeleteUser)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
@@ -66,7 +69,7 @@ func TestDeleteUser(t *testing.T) {
 			t.Fatal(err)
 		}
 		rr := httptest.NewRecorder()
-		handler := http.HandlerFunc((&UserServiceImplementation{}).DeleteUser)
+		handler := http.HandlerFunc((&views.UserServiceImplementation{}).DeleteUser)
 		handler.ServeHTTP(rr, req)
 
 		if status := rr.Code; status != http.StatusOK {
