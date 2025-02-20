@@ -107,7 +107,6 @@ func (s *UserServiceImplementation) UpdateUser(w http.ResponseWriter, r *http.Re
 }
 
 // DeleteUser handles the deletion of a user from the system.
-// It decodes the request body, searches for the user in the Users list, and removes the user if found.
 func (s *UserServiceImplementation) DeleteUser(w http.ResponseWriter, r *http.Request) {
 	var User models.User
 	err := json.NewDecoder(r.Body).Decode(&User)
