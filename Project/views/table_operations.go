@@ -23,40 +23,46 @@ func (s *TableServiceImplementation) BookTable(w http.ResponseWriter, r *http.Re
 
 	log.Printf("Booking Table for %v at %v'O clock with BookNow: %v\n", b.Customer.FirstName+" "+b.Customer.LastName, b.Time, b.BookNow)
 
-	// Generate a Booking ID (for simplicity, using a timestamp + a random string)
-	b.ID = fmt.Sprintf("BOOK-%v-%v", b.WeekDay, time.Now().UnixNano())
-
 	// If it's a Book Now request
 	if b.BookNow {
 		isTableBooked := false
 
+		// Convert WeekDay enum to string for accessing Tables_Data
+		weekdayString := models.WeekDayToString[b.WeekDay]
+
 		// Check if Tables_Data for the requested weekday is initialized
-		if Tables_Data[b.WeekDay] == nil || len(Tables_Data[b.WeekDay]) == 0 {
+		if Tables_Data[weekdayString] == nil || len(Tables_Data[weekdayString]) == 0 {
 			http.Error(w, "No available tables", http.StatusInternalServerError)
 			return
 		}
 
-		for hour, tables := range Tables_Data[b.WeekDay] {
-			if hour == b.Time {
-				for i, tab := range tables {
+		for _, v := range Tables_Data[weekdayString] {
+			if v.Hour == b.Time {
+				for j, tab := range v.Table {
 					// If a table is available, book it
 					if tab.IsEmpty {
-						// Mark the table as booked and set the Booking ID
-						tab.IsEmpty = false
-						tab.BookingID = b.ID
+						// Create a new instance of Table and copy the values
+						bookedTable := models.Table{
+							ID:       tab.ID,
+							Capacity: tab.Capacity,
+							IsEmpty:  false, // Mark as booked
+						}
 
-						// Update the table in the data structure
-						Tables_Data[b.WeekDay][hour][i] = tab
+						// Update the table in the data structure with the modified (booked) table
+						Tables_Data[weekdayString][b.Time-9].Table[j] = bookedTable
 
 						// Assign the booked table to the booking
-						b.Table = tab
+						b.Table = bookedTable
 						b.BookingStatus = "Confirmed"
 
+						// Generate a Booking ID (for simplicity, using a timestamp + a random string)
+						b.ID = fmt.Sprintf("BOOK-%v-%v", b.WeekDay, time.Now().UnixNano())
+
 						// Debugging: log the successful booking
-						log.Printf("Booked Table %v on %v at %v'O clock for %v\n", b.Table.ID, models.WeekDayToString[b.WeekDay], b.Time, b.Customer.FirstName+" "+b.Customer.LastName)
+						log.Printf("Booked Table %v on %v at %v'O clock for %v\n", b.Table.ID, weekdayString, b.Time, b.Customer.FirstName+" "+b.Customer.LastName)
 
 						w.WriteHeader(http.StatusAccepted)
-						fmt.Fprintf(w, "Booking Confirmed! Your Booking ID is %v. Table %v on %v at %v'O clock for %v\n", b.ID, b.Table.ID, models.WeekDayToString[b.WeekDay], b.Time, b.Customer.FirstName+" "+b.Customer.LastName)
+						fmt.Fprintf(w, "Booking Confirmed! Your Booking ID is %v. Table %v on %v at %v'O clock for %v\n", b.ID, b.Table.ID, weekdayString, b.Time, b.Customer.FirstName+" "+b.Customer.LastName)
 
 						isTableBooked = true
 						// Break out of the loop to ensure only one booking is made
@@ -74,34 +80,35 @@ func (s *TableServiceImplementation) BookTable(w http.ResponseWriter, r *http.Re
 
 		// If no table is available for "Book Now", add to queue
 		if !isTableBooked {
-			addToQueue(b, w)
+			// Ensure the BookingQueue map is initialized
+			if BookingQueue[weekdayString] == nil {
+				BookingQueue[weekdayString] = make(map[int]Queue)
+			}
+
+			// Ensure the queue for the requested time is initialized
+			if BookingQueue[weekdayString][b.Time].Channel == nil {
+				queue := NewQueue(100) // Assuming a capacity of 100 for the queue
+				BookingQueue[weekdayString][b.Time] = queue
+			}
+
+			// Add the customer to the queue
+			err := BookingQueue[weekdayString][b.Time].Enqueue(models.QueueEntry{
+				CustomerName: b.Customer.FirstName + " " + b.Customer.LastName,
+				WeekDay:      b.WeekDay,
+				Time:         b.Time,
+			})
+			if err != nil {
+				http.Error(w, "Failed to add to queue", http.StatusInternalServerError)
+				return
+			}
+
+			// Return the queue number to the customer
+			fmt.Fprintf(w, "No table is available for immediate booking. You have been added to the queue for %v at %v'O clock.\n", weekdayString, b.Time)
 		}
 	} else {
 		// If it's a "Book Later" request, add it to the queue
-		addToQueue(b, w)
-	}
-}
-
-// addToQueue adds a booking to the queue if no table is available
-func addToQueue(b models.Booking, w http.ResponseWriter) {
-	weekdayString := models.WeekDayToString[b.WeekDay]
-
-	// Ensure the BookingQueue map is initialized
-	if BookingQueue[weekdayString] == nil {
-		BookingQueue[weekdayString] = make(map[int]*Queue)
-	}
-
-	// Ensure the queue for the requested time is initialized
-	if BookingQueue[weekdayString][b.Time] == nil {
-		BookingQueue[weekdayString][b.Time] = &Queue{Channel: make(chan models.QueueEntry, 100)} // Assuming a capacity of 100 for the queue
-	}
-
-	// Add the customer to the queue
-	err := BookingQueue[weekdayString][b.Time].Enqueue(models.QueueEntry{
-		CustomerName: b.Customer.FirstName + " " + b.Customer.LastName,
-		// If it's a "Book Later" request, add it to the queue
 		log.Printf("No immediate availability, adding to queue for %v at %v'O clock\n", b.WeekDay, b.Time)
-x	
+
 		// Convert WeekDay enum to string for accessing the BookingQueue
 		weekdayString := models.WeekDayToString[b.WeekDay]
 
@@ -125,7 +132,7 @@ x
 			http.Error(w, "Failed to add to queue", http.StatusInternalServerError)
 			return
 		}
-        b.BookingStatus = "Pending"
+
 		// Return the queue number to the customer
 		fmt.Fprintf(w, "No table is available for immediate booking. You have been added to the queue for %v at %v'O clock.\n", weekdayString, b.Time)
 	}
@@ -168,4 +175,3 @@ func (s *TableServiceImplementation) CancelTable(w http.ResponseWriter, r *http.
 	fmt.Fprintf(w, "Table not found.\n")
 	log.Println("Table not found.")
 }
-
