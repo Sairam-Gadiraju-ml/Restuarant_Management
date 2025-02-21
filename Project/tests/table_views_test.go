@@ -7,6 +7,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"net/http/httptest"
+	"strconv"
 	"testing"
 
 	"github.com/gorilla/mux"
@@ -62,6 +63,60 @@ func TestBookTable(t *testing.T) {
 		}
 
 		expected := "No table is available for immediate booking. You have been added to the queue for Tuesday at 11'O clock."
+		if !bytes.Contains(rr.Body.Bytes(), []byte(expected)) {
+			t.Errorf("handler returned unexpected body: got %v want %v", rr.Body.String(), expected)
+		}
+	})
+
+	t.Run("Book 10 tables at 9 on Monday", func(t *testing.T) {
+		for i := 0; i < 10; i++ {
+			booking := models.Booking{
+				Customer: models.Customer{FirstName: "Customer", LastName: strconv.Itoa(i)},
+				WeekDay:  models.Monday,
+				Time:     9,
+				BookNow:  true,
+			}
+			body, _ := json.Marshal(booking)
+			req, err := http.NewRequest(http.MethodPost, "/book", bytes.NewBuffer(body))
+			if err != nil {
+				t.Fatal(err)
+			}
+			rr := httptest.NewRecorder()
+			handler := http.HandlerFunc((&views.TableServiceImplementation{}).BookTable)
+			handler.ServeHTTP(rr, req)
+
+			if status := rr.Code; status != http.StatusAccepted {
+				t.Errorf("handler returned wrong status code: got %v want %v", status, http.StatusAccepted)
+			}
+
+			expected := "Booking Confirmed! Your Booking ID is BOOK-Monday-"
+			if !bytes.Contains(rr.Body.Bytes(), []byte(expected)) {
+				t.Errorf("handler returned unexpected body: got %v want %v", rr.Body.String(), expected)
+			}
+		}
+	})
+
+	t.Run("Book a table at 11 on Monday", func(t *testing.T) {
+		booking := models.Booking{
+			Customer: models.Customer{FirstName: "Sai", LastName: "Ram"},
+			WeekDay:  models.Monday,
+			Time:     11,
+			BookNow:  true,
+		}
+		body, _ := json.Marshal(booking)
+		req, err := http.NewRequest(http.MethodPost, "/book", bytes.NewBuffer(body))
+		if err != nil {
+			t.Fatal(err)
+		}
+		rr := httptest.NewRecorder()
+		handler := http.HandlerFunc((&views.TableServiceImplementation{}).BookTable)
+		handler.ServeHTTP(rr, req)
+
+		if status := rr.Code; status != http.StatusAccepted {
+			t.Errorf("handler returned wrong status code: got %v want %v", status, http.StatusAccepted)
+		}
+
+		expected := "Booking Confirmed! Your Booking ID is BOOK-Monday-"
 		if !bytes.Contains(rr.Body.Bytes(), []byte(expected)) {
 			t.Errorf("handler returned unexpected body: got %v want %v", rr.Body.String(), expected)
 		}

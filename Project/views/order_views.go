@@ -110,11 +110,4 @@ func (s *OrderServiceImplementation) HandleOrderID(w http.ResponseWriter, r *htt
 	}
 }
 
-// TableService defines the interface for managing table-related operations.
-type OrderService interface {
-	ListCreateOrder(w http.ResponseWriter, r *http.Request)
-	HandleOrderID(w http.ResponseWriter, r *http.Request)
-}
 
-// TableServiceImplementation implements the TableService interface.
-type OrderServiceImplementation struct{}
