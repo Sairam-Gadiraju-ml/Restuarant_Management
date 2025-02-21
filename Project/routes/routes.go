@@ -1,38 +1,25 @@
-package main
+package routes
 
 import (
 	"Project/views"
-	"fmt"
-	"log"
-	"net/http"
 
 	"github.com/gorilla/mux"
 )
 
-func main() {
-
-	router := mux.NewRouter()
-
-	// Creates a logFile.txt if not created already and Opens it to write logs
-	file := views.CreateLogFile()
-
-	// Intialize the tables for the day
-	views.IntializeTables()
-	go views.QueueProcessor()
-
-	// End points Responsbile for booking tables
-	var tableserice = views.TableServiceImplementation{}
+// InitializeRoutes sets up the routes for the application.
+func InitializeRoutes(router *mux.Router) {
+	// End points Responsible for booking tables
+	var tableservice = views.TableServiceImplementation{}
 	table := router.PathPrefix("/table").Subrouter()
-	table.HandleFunc("/get", tableserice.GetTables).Methods("GET")
-	table.HandleFunc("/book", tableserice.BookTable).Methods("POST")
-	table.HandleFunc("/cancel", tableserice.CancelTable).Methods("PATCH")
-	table.HandleFunc("/info", tableserice.GetInfo).Methods("GET")
-	table.HandleFunc("/free/{weekday}", tableserice.GetFreeTables).Methods("GET")
-	table.HandleFunc("/add", tableserice.AddTable).Methods("POST")
-	table.HandleFunc("/remove", tableserice.RemoveTable).Methods("DELETE")
+	table.HandleFunc("/get", tableservice.GetTables).Methods("GET")
+	table.HandleFunc("/book", tableservice.BookTable).Methods("POST")
+	table.HandleFunc("/cancel", tableservice.CancelTable).Methods("PATCH")
+	table.HandleFunc("/info", tableservice.GetInfo).Methods("GET")
+	table.HandleFunc("/free/{weekday}", tableservice.GetFreeTables).Methods("GET")
+	table.HandleFunc("/add", tableservice.AddTable).Methods("POST")
+	table.HandleFunc("/remove", tableservice.RemoveTable).Methods("DELETE")
 
 	// End points Responsible for Customer handling
-
 	customer := router.PathPrefix("/customer").Subrouter()
 	customer.HandleFunc("/", views.GetAllCustomer).Methods("GET")
 	customer.HandleFunc("/{id}", views.HandleCustomer).Methods("GET", "PUT", "DELETE")
@@ -44,7 +31,7 @@ func main() {
 	orders.HandleFunc("/", orderservice.ListCreateOrder).Methods("GET", "POST")
 	orders.HandleFunc("/{id}", orderservice.HandleOrderID).Methods("GET", "PUT", "DELETE")
 
-	//Endpoins Responsible for Menu
+	// Endpoints Responsible for Menu
 	menuservice := views.MenuServiceImplementation{}
 	menu := router.PathPrefix("/menu").Subrouter()
 	menu.HandleFunc("/", menuservice.GetMenu).Methods("GET", "POST")
@@ -63,12 +50,4 @@ func main() {
 	bills := router.PathPrefix("/bills").Subrouter()
 	bills.HandleFunc("/", views.GetCreateBill).Methods("GET", "POST")
 	bills.HandleFunc("/{id}", views.HandleBillID).Methods("GET", "PUT", "DELETE")
-
-	log.Println("Intializing the server at http://localhost:5000/:")
-	if err := http.ListenAndServe(":5000", router); err != nil {
-		log.Panicln("Error Starting server")
-		fmt.Println("Error starting server:", err)
-	}
-	// Closes the logFile.txt
-	defer file.Close()
 }

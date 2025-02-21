@@ -107,9 +107,3 @@ func (s *MenuServiceImplementation) HandleMenuItem(w http.ResponseWriter, r *htt
 	}
 }
 
-type MenuService interface {
-	GetMenu(w http.ResponseWriter, r *http.Request)
-	HandleMenuItem(w http.ResponseWriter, r *http.Request)
-}
-
-type MenuServiceImplementation struct{}

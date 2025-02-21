@@ -106,9 +106,4 @@ func HandleBillID(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-type BillService interface {
-	GetCreateBill(w http.ResponseWriter, r *http.Request)
-	HandleBillID(w http.ResponseWriter, r *http.Request)
-}
 
-type BillServiceImplementation struct{}

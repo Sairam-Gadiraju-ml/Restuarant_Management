@@ -13,27 +13,6 @@ import (
 
 var Users []models.User
 
-// UserServiceImplementation implements the UserService interface.
-type UserServiceImplementation struct {
-}
-
-// UserService defines the methods required for user management.
-type UserService interface {
-	// RegisterUser handles user registration.
-	RegisterUser(w http.ResponseWriter, r *http.Request)
-
-	// LoginUser handles user login.
-	LoginUser(w http.ResponseWriter, r *http.Request)
-
-	// UpdateUser allows updating user information.
-	UpdateUser(w http.ResponseWriter, r *http.Request)
-
-	// DeleteUser deletes a user from the system.
-	DeleteUser(w http.ResponseWriter, r *http.Request)
-
-	// ListUsers returns a list of all registered users.
-	ListUsers(w http.ResponseWriter, r *http.Request)
-}
 
 // LoginUser allows a user to log in using their username and password.
 // It decodes the request body, checks for any decoding errors
