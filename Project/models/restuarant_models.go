@@ -1,5 +1,9 @@
 package models
 
+import (
+	"sync"
+)
+
 // Customer represents a customer in the restaurant system.
 type Customer struct {
 	Id        uint   `json:"id"`
@@ -134,4 +138,9 @@ type QueueEntry struct {
 	CustomerName string
 	WeekDay      WeekDay
 	Time         int
+}
+type Queue struct {
+	entries []QueueEntry
+	Channel chan QueueEntry
+	mu      sync.Mutex
 }

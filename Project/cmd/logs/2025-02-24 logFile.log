@@ -1,0 +1,27 @@
+2025/02/24 18:34:47 Initializing Tables
+2025/02/24 18:34:47 Intializing the server at http://localhost:5000/:
+2025/02/24 18:35:17 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:17 Booked Table 1 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:21 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:21 Booked Table 2 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:22 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:22 Booked Table 3 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:23 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:23 Booked Table 4 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:23 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:23 Booked Table 5 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:25 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:25 Booked Table 6 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:26 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:26 Booked Table 7 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:26 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:26 Booked Table 8 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:27 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:27 Booked Table 9 on Wednesday at 12'O clock for Ram Sai
+2025/02/24 18:35:27 Booking table for customer Ram Sai at Wednesday 12
+2025/02/24 18:35:28 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:29 Booking Table for Ram Sai at 12'O clock with BookNow: true
+2025/02/24 18:35:33 Fetching tables data...
+2025/02/24 18:35:33 Successfully fetched tables data.
+2025/02/24 18:35:37 No available table for customer Ram Sai at Wednesday 12
+2025/02/24 18:35:47 No available table for customer Ram Sai at Wednesday 12
